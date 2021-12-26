@@ -145,11 +145,9 @@ if(UNIX AND NOT(APPLE))
     set(LIBS ${LIBS} ${CMAKE_THREAD_LIBS_INIT})
 endif(UNIX AND NOT(APPLE))
 
-if (UNIX)
-    install(TARGETS libfive DESTINATION lib)
-    install(FILES ../include/libfive.h DESTINATION include)
-    install(DIRECTORY ../include/libfive DESTINATION include
-            FILES_MATCHING PATTERN "*.hpp")
-endif(UNIX)
+install(TARGETS libfive DESTINATION lib)
+install(FILES ../include/libfive.h DESTINATION include)
+install(DIRECTORY ../include/libfive DESTINATION include
+        FILES_MATCHING PATTERN "*.hpp")
 
 target_link_libraries(libfive ${LIBS})
