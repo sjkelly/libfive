@@ -77,14 +77,7 @@ endif()
 if(NOT MSVC)
     # These packages have different naming conventions in MSVC vs Linux
     find_package(Boost REQUIRED)
-    find_package(PkgConfig REQUIRED)
-
-    pkg_check_modules(GUILE guile-2.2>=2.2.1)
-    if (NOT(GUILE_FOUND))
-        pkg_check_modules(GUILE guile-3.0>=3.0.0)
-    endif()
-
-    pkg_check_modules(EIGEN REQUIRED eigen3>=3.2.92)
+    find_package(EIGEN REQUIRED eigen3>=3.2.92)
 else()
     find_package(eigen3 REQUIRED)
     find_package(boost REQUIRED 1.65.0)
